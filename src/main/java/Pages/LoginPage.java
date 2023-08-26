@@ -2,12 +2,14 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import util.genericMethods;
 
-public class LoginPage {
+public class LoginPage extends genericMethods {
 
     WebDriver driver;
 
     public LoginPage(WebDriver driver){
+        super(driver);
         this.driver = driver;
     }
 
@@ -16,20 +18,20 @@ public class LoginPage {
     private By loginBtn = By.id("btn-login");
 
     public void doLogin(String user, String pass){
-        driver.findElement(userName).sendKeys(user);
-        driver.findElement(password).sendKeys(pass);
-        driver.findElement(loginBtn).click();
+
+        enterText(driver.findElement(userName), user);
+        enterText(driver.findElement(password), pass);
+        clickElement(driver.findElement(loginBtn));
     }
 
     public void setUserName(String user){
-        driver.findElement(userName).sendKeys(user);
+        enterText(driver.findElement(userName), user);
     }
 
     public void setPassword(String pass){
-        driver.findElement(password).sendKeys(pass);
-    }
+        enterText(driver.findElement(password), pass);    }
 
     public void clickLoginBtn(){
-        driver.findElement(loginBtn).click();
+        clickElement(driver.findElement(loginBtn));
     }
 }
