@@ -1,0 +1,5 @@
+facility,readmission,program,date,comment
+Tokyo CURA Healthcare Center,true,medicare,19,test comment 1
+Hongkong CURA Healthcare Center,false,medicaid,20,test comment 2
+Seoul CURA Healthcare Center,true,none,25,test comment 3
+Seoul CURA Healthcare Center,false,medicaid,26,test comment 4

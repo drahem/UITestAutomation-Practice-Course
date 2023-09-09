@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import util.genericMethods;
 
+import java.util.Objects;
+
 public class appointmentPage extends genericMethods{
 
     WebDriver driver;
@@ -25,8 +27,10 @@ public class appointmentPage extends genericMethods{
         clickElement(driver.findElement(By.xpath("//option[text()='"+facilityName+"']")));
     }
 
-    public void checkReadMission(){
+    public void checkReadMission(String check){
+        if (Objects.equals(check, "true")){
         clickElement(driver.findElement(readMissionCheckBox));
+        }
     }
 
     public void selectHealthCareProgram(String program){
@@ -42,5 +46,16 @@ public class appointmentPage extends genericMethods{
     private By dateText = By.id("txt_visit_date");
     public void setDate(String date){
         enterText(driver.findElement(dateText), date);
+    }
+
+    private By comment = By.id("txt_comment");
+    public void setComment(String text){
+        enterText(driver.findElement(comment), text);
+    }
+
+    private By makeAppointmentBtn = By.id("btn-book-appointment");
+    public void clickBookAppointmentBtn(){
+        clickElement(driver.findElement(makeAppointmentBtn));
+
     }
 }

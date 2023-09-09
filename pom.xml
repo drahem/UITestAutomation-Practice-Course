@@ -40,6 +40,11 @@
       <scope>compile</scope>
     </dependency>
 
+    <dependency>
+      <groupId>com.github.hemanthsridhar</groupId>
+      <artifactId>testng-ext-dataprovider</artifactId>
+      <version>14.3.0</version>
+    </dependency>
 
   </dependencies>
 
